@@ -3,10 +3,330 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Anup K. Tarafder | Full-Stack Software Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .card { @apply bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow; }
+    </style>
 </head>
-<body>
-    Hello World!
+<body class="bg-slate-50 text-slate-800 antialiased">
+    <div class="max-w-5xl mx-auto px-4 py-12 lg:py-20">
+        <!-- Header / Hero -->
+        <header class="mb-16 text-center lg:text-left flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div class="flex-1">
+                <h1 class="text-4xl lg:text-6xl font-extrabold text-slate-900 mb-2">Anup K. Tarafder</h1>
+                <p class="text-xl lg:text-2xl text-indigo-600 font-medium">Full-Stack Software Engineer</p>
+                <div class="mt-6 flex flex-wrap justify-center lg:justify-start gap-4 text-slate-600">
+                    <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-sm">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-indigo-500"></i>
+                        <span class="text-sm">Kuala Lumpur, Malaysia</span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-sm">
+                        <i data-lucide="phone" class="w-4 h-4 text-indigo-500"></i>
+                        <span class="text-sm">+60103637635</span>
+                    </div>
+                    <a href="mailto:anup.k.tarafder@gmail.com" class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-sm hover:text-indigo-600 transition-colors">
+                        <i data-lucide="mail" class="w-4 h-4 text-indigo-500"></i>
+                        <span class="text-sm">anup.k.tarafder@gmail.com</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/anupktarafder/" target="_blank" class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-sm hover:text-indigo-600 transition-colors">
+                        <i data-lucide="linkedin" class="w-4 h-4 text-indigo-500"></i>
+                        <span class="text-sm">LinkedIn</span>
+                    </a>
+                </div>
+            </div>
+            <div class="w-32 h-32 bg-indigo-600 text-white flex items-center justify-center rounded-2xl text-4xl font-bold shadow-xl shadow-indigo-100 lg:rotate-3">
+                AT
+            </div>
+        </header>
+
+        <!-- Professional Summary -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                <span class="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center">
+                    <i data-lucide="user" class="w-5 h-5 text-indigo-600"></i>
+                </span>
+                Professional Summary
+            </h2>
+            <div class="card bg-gradient-to-br from-indigo-50 to-white border-indigo-100">
+                <p class="text-lg leading-relaxed text-slate-700">
+                    Seasoned Full-Stack Software Engineer with 6+ years of experience building scalable web applications and backend services. Strong background in frontend and backend development, CI/CD automation, container orchestration, and distributed systems. Experienced in leading teams, improving deployment processes, and delivering production-grade applications across enterprise environments.
+                </p>
+            </div>
+        </section>
+
+        <!-- Work Experience -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+                <span class="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center">
+                    <i data-lucide="briefcase" class="w-5 h-5 text-indigo-600"></i>
+                </span>
+                Work Experience
+            </h2>
+            <div class="space-y-8">
+                <!-- Inscale Asia -->
+                <div class="flex gap-4 md:gap-6">
+                    <div class="flex flex-col items-center">
+                        <div class="w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center shrink-0">
+                            <i data-lucide="check" class="w-5 h-5"></i>
+                        </div>
+                        <div class="w-0.5 h-full bg-slate-200 mt-2"></div>
+                    </div>
+                    <div class="card flex-1 -mt-1">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900">Full-Stack Developer</h3>
+                                <p class="text-indigo-600 font-semibold">Inscale Asia Sdn Bhd (Assigned to SEB)</p>
+                            </div>
+                            <time class="text-sm font-medium text-slate-500 bg-slate-100 px-3 py-1 rounded-full w-fit">Sep 2024 – Present</time>
+                        </div>
+                        <ul class="text-slate-600 space-y-2 list-none">
+                            <li class="flex gap-2">
+                                <span class="text-indigo-400 font-bold">•</span>
+                                Designed and maintained CI/CD pipelines using GitHub Actions, TFS, Kubernetes, and Red Hat OpenShift.
+                            </li>
+                            <li class="flex gap-2">
+                                <span class="text-indigo-400 font-bold">•</span>
+                                Led migration of production applications from Kubernetes to OpenShift, ensuring zero-downtime transition.
+                            </li>
+                            <li class="flex gap-2">
+                                <span class="text-indigo-400 font-bold">•</span>
+                                Improved deployment speed and release consistency across multiple services.
+                            </li>
+                            <li class="flex gap-2">
+                                <span class="text-indigo-400 font-bold">•</span>
+                                Collaborated with cross-functional teams to enhance build automation and environment stability.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Eagle 3D -->
+                <div class="flex gap-4 md:gap-6">
+                    <div class="flex flex-col items-center">
+                        <div class="w-10 h-10 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center shrink-0">
+                            <i data-lucide="video" class="w-5 h-5"></i>
+                        </div>
+                        <div class="w-0.5 h-full bg-slate-200 mt-2"></div>
+                    </div>
+                    <div class="card flex-1 -mt-1">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900">Front-End Developer</h3>
+                                <p class="text-indigo-600 font-semibold">Eagle 3D Streaming, Texas (Remote)</p>
+                            </div>
+                            <time class="text-sm font-medium text-slate-500 bg-slate-100 px-3 py-1 rounded-full w-fit">Aug 2023 – Sep 2024</time>
+                        </div>
+                        <ul class="text-slate-600 space-y-2 list-none">
+                            <li class="flex gap-2">
+                                <span class="text-indigo-400 font-bold">•</span>
+                                Integrated Pixel Streaming library into React applications for real-time Unreal Engine streaming.
+                            </li>
+                            <li class="flex gap-2">
+                                <span class="text-indigo-400 font-bold">•</span>
+                                Collaborated with Unreal Engine developers to implement custom streaming features.
+                            </li>
+                            <li class="flex gap-2">
+                                <span class="text-indigo-400 font-bold">•</span>
+                                Developed scalable backend APIs using NestJS and ExpressJS.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- LiquidX -->
+                <div class="flex gap-4 md:gap-6">
+                    <div class="flex flex-col items-center">
+                        <div class="w-10 h-10 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center shrink-0">
+                            <i data-lucide="layers" class="w-5 h-5"></i>
+                        </div>
+                        <div class="w-0.5 h-full bg-slate-200 mt-2"></div>
+                    </div>
+                    <div class="card flex-1 -mt-1">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900">Software Engineer (Full-Stack)</h3>
+                                <p class="text-indigo-600 font-semibold">LiquidX Studio, Singapore (Remote)</p>
+                            </div>
+                            <time class="text-sm font-medium text-slate-500 bg-slate-100 px-3 py-1 rounded-full w-fit">Nov 2022 – Aug 2023</time>
+                        </div>
+                        <ul class="text-slate-600 space-y-2 list-none">
+                            <li class="flex gap-2">
+                                <span class="text-indigo-400 font-bold">•</span>
+                                Designed and developed scalable backend APIs using NestJS.
+                            </li>
+                            <li class="flex gap-2">
+                                <span class="text-indigo-400 font-bold">•</span>
+                                Implemented unit testing with Jest, achieving 95% test coverage.
+                            </li>
+                            <li class="flex gap-2">
+                                <span class="text-indigo-400 font-bold">•</span>
+                                Integrated Web3 functionality using Alchemy APIs and smart contracts.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- SELISE -->
+                <div class="flex gap-4 md:gap-6">
+                    <div class="flex flex-col items-center">
+                        <div class="w-10 h-10 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center shrink-0">
+                            <i data-lucide="users" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                    <div class="card flex-1 -mt-1">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900">Software Engineer → Team Lead</h3>
+                                <p class="text-indigo-600 font-semibold">SELISE Digital Platforms, Dhaka</p>
+                            </div>
+                            <time class="text-sm font-medium text-slate-500 bg-slate-100 px-3 py-1 rounded-full w-fit">Jan 2019 – Nov 2022</time>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="border-l-2 border-slate-100 pl-4">
+                                <h4 class="font-bold text-slate-800 text-sm">Team Lead (Nov 2021 – Nov 2022)</h4>
+                                <p class="text-sm text-slate-600 mt-1">Led a team of 5 developers. Owned sprint planning and task distribution.</p>
+                            </div>
+                            <div class="border-l-2 border-slate-100 pl-4">
+                                <h4 class="font-bold text-slate-800 text-sm">Full-Stack Developer (Jun 2020 – Nov 2021)</h4>
+                                <p class="text-sm text-slate-600 mt-1">Developed enterprise auditing applications using Angular and .NET Core.</p>
+                            </div>
+                            <div class="border-l-2 border-slate-100 pl-4">
+                                <h4 class="font-bold text-slate-800 text-sm">Front-End Developer (Jan 2019 – May 2020)</h4>
+                                <p class="text-sm text-slate-600 mt-1">Built enterprise web applications using Angular 7+, Material, and RxJS.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+                <span class="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center">
+                    <i data-lucide="code" class="w-5 h-5 text-indigo-600"></i>
+                </span>
+                Technical Skills
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Frontend -->
+                <div class="card">
+                    <h3 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                        <i data-lucide="monitor" class="w-4 h-4 text-indigo-500"></i>
+                        Frontend
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-md text-xs font-semibold">Angular 2+</span>
+                        <span class="bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-md text-xs font-semibold">React / NextJS</span>
+                        <span class="bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-md text-xs font-semibold">TypeScript</span>
+                        <span class="bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-md text-xs font-semibold">SCSS / CSS3</span>
+                    </div>
+                </div>
+                <!-- Backend -->
+                <div class="card">
+                    <h3 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                        <i data-lucide="server" class="w-4 h-4 text-indigo-500"></i>
+                        Backend
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-md text-xs font-semibold">NodeJS / NestJS</span>
+                        <span class="bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-md text-xs font-semibold">C# / .NET Core</span>
+                        <span class="bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-md text-xs font-semibold">REST / GraphQL</span>
+                        <span class="bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-md text-xs font-semibold">Microservices</span>
+                    </div>
+                </div>
+                <!-- Databases -->
+                <div class="card">
+                    <h3 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                        <i data-lucide="database" class="w-4 h-4 text-indigo-500"></i>
+                        DB & Messaging
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-md text-xs font-semibold">PostgreSQL / MySQL</span>
+                        <span class="bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-md text-xs font-semibold">MongoDB / Redis</span>
+                        <span class="bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-md text-xs font-semibold">RabbitMQ</span>
+                        <span class="bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-md text-xs font-semibold">Firebase</span>
+                    </div>
+                </div>
+                <!-- DevOps -->
+                <div class="card">
+                    <h3 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                        <i data-lucide="terminal" class="w-4 h-4 text-indigo-500"></i>
+                        DevOps & Tools
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-md text-xs font-semibold">Docker / K8s</span>
+                        <span class="bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-md text-xs font-semibold">OpenShift</span>
+                        <span class="bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-md text-xs font-semibold">GitHub Actions</span>
+                        <span class="bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-md text-xs font-semibold">CI/CD Pipelines</span>
+                    </div>
+                </div>
+                <!-- Specialized -->
+                <div class="card">
+                    <h3 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                        <i data-lucide="zap" class="w-4 h-4 text-indigo-500"></i>
+                        Specialized
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-md text-xs font-semibold">Pixel Streaming</span>
+                        <span class="bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-md text-xs font-semibold">Web3 / Alchemy</span>
+                        <span class="bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-md text-xs font-semibold">Smart Contracts</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom Grid: Education & Core Competencies -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Education -->
+            <section>
+                <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                    <span class="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center">
+                        <i data-lucide="graduation-cap" class="w-5 h-5 text-indigo-600"></i>
+                    </span>
+                    Education
+                </h2>
+                <div class="card">
+                    <div class="font-bold text-slate-900 text-lg">B.Sc. in Computer Science & Engineering</div>
+                    <div class="text-indigo-600 font-medium">Rajshahi University of Engineering & Technology</div>
+                    <div class="flex items-center gap-2 text-sm text-slate-500 mt-3">
+                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        <span>Apr 2014 – Oct 2018 | Rajshahi, Bangladesh</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Core Competencies -->
+            <section>
+                <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                    <span class="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center">
+                        <i data-lucide="award" class="w-5 h-5 text-indigo-600"></i>
+                    </span>
+                    Core Competencies
+                </h2>
+                <div class="card">
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-slate-50 text-slate-700 border border-slate-200 px-3 py-1 rounded-lg text-sm font-medium">Agile Development</span>
+                        <span class="bg-slate-50 text-slate-700 border border-slate-200 px-3 py-1 rounded-lg text-sm font-medium">Software Architecture</span>
+                        <span class="bg-slate-50 text-slate-700 border border-slate-200 px-3 py-1 rounded-lg text-sm font-medium">Team Leadership</span>
+                        <span class="bg-slate-50 text-slate-700 border border-slate-200 px-3 py-1 rounded-lg text-sm font-medium">Code Reviews</span>
+                        <span class="bg-slate-50 text-slate-700 border border-slate-200 px-3 py-1 rounded-lg text-sm font-medium">Mentoring</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer class="mt-20 pt-8 border-t border-slate-200 text-center text-slate-500 text-sm">
+            <p>&copy; 2026 Anup K. Tarafder. Built with Tailwind CSS and Lucide Icons.</p>
+        </footer>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
