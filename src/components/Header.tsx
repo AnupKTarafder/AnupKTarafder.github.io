@@ -1,8 +1,14 @@
 import { Linkedin, Mail, MapPin, Phone } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 export default function Header() {
   return (
-    <header className="mb-16 text-center lg:text-left flex flex-col lg:flex-row items-center justify-between gap-8">
+    <motion.header
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="mb-16 text-center lg:text-left flex flex-col lg:flex-row items-center justify-between gap-8"
+    >
       <div className="flex-1">
         <h1 className="text-4xl lg:text-7xl font-extrabold text-slate-900 dark:text-white mb-4 tracking-tight">
           Anup K. <span className="gradient-text">Tarafder</span>
@@ -52,6 +58,6 @@ export default function Header() {
           />
         </div>
       </div>
-    </header>
+    </motion.header>
   )
 }

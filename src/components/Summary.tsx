@@ -2,6 +2,7 @@ import { User } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 export default function Summary() {
+    const yearsOfExperience = new Date().getFullYear() - 2019;
   return (
     <motion.section
       className="mb-20"
@@ -18,7 +19,7 @@ export default function Summary() {
       </h2>
       <div className="card bg-gradient-to-br from-indigo-50 to-white dark:from-slate-800 dark:to-slate-900 border-indigo-100 dark:border-indigo-900/20">
         <p className="text-lg lg:text-xl leading-relaxed text-slate-700 dark:text-slate-300">
-          Seasoned Full-Stack Software Engineer with <span className="text-indigo-600 dark:text-indigo-400 font-semibold">6+ years of experience</span> building scalable web applications and backend services. Strong background in frontend and backend development, CI/CD automation, container orchestration, and distributed systems. Experienced in leading teams, improving deployment processes, and delivering production-grade applications across enterprise environments.
+          Seasoned Full-Stack Software Engineer with <span className="text-indigo-600 dark:text-indigo-400 font-semibold"> {yearsOfExperience}+ of experience</span> building scalable web applications and backend services. Strong background in frontend and backend development, CI/CD automation, container orchestration, and distributed systems. Experienced in leading teams, improving deployment processes, and delivering production-grade applications across enterprise environments.
         </p>
       </div>
     </motion.section>

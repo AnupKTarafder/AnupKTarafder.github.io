@@ -12,15 +12,24 @@ function Bullet({ children }: { children: React.ReactNode }) {
   )
 }
 
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+}
+
+const item = {
+  hidden: { opacity: 0, x: -20 },
+  show: { opacity: 1, x: 0 },
+}
+
 export default function Experience() {
   return (
-    <motion.section
-      className="mb-20"
-      initial={{ opacity: 0, y: 32 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
-    >
+    <section className="mb-20">
       <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-10 flex items-center gap-3">
         <span className="w-10 h-10 bg-indigo-100 dark:bg-indigo-900/50 rounded-xl flex items-center justify-center">
           <Briefcase className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
@@ -28,9 +37,15 @@ export default function Experience() {
         Work Experience
       </h2>
 
-      <div className="space-y-12">
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.1 }}
+        className="space-y-12"
+      >
         {/* Inscale Asia */}
-        <div className="flex gap-4 md:gap-8 group">
+        <motion.div variants={item} className="flex gap-4 md:gap-8 group">
           <div className="flex flex-col items-center">
             <div className="w-12 h-12 rounded-full bg-indigo-600 text-white flex items-center justify-center shrink-0 shadow-lg shadow-indigo-200 dark:shadow-none z-10">
               <Check className="w-6 h-6" />
@@ -53,10 +68,10 @@ export default function Experience() {
               <Bullet>Collaborated with cross-functional teams to enhance build automation and environment stability.</Bullet>
             </ul>
           </div>
-        </div>
+        </motion.div>
 
         {/* Eagle 3D */}
-        <div className="flex gap-4 md:gap-8 group">
+        <motion.div variants={item} className="flex gap-4 md:gap-8 group">
           <div className="flex flex-col items-center">
             <div className="w-12 h-12 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-500 dark:text-slate-400 flex items-center justify-center shrink-0 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300 z-10">
               <Video className="w-6 h-6" />
@@ -78,10 +93,10 @@ export default function Experience() {
               <Bullet>Developed scalable backend APIs using NestJS and ExpressJS.</Bullet>
             </ul>
           </div>
-        </div>
+        </motion.div>
 
         {/* LiquidX */}
-        <div className="flex gap-4 md:gap-8 group">
+        <motion.div variants={item} className="flex gap-4 md:gap-8 group">
           <div className="flex flex-col items-center">
             <div className="w-12 h-12 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-500 dark:text-slate-400 flex items-center justify-center shrink-0 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300 z-10">
               <Layers className="w-6 h-6" />
@@ -103,10 +118,10 @@ export default function Experience() {
               <Bullet>Integrated Web3 functionality using Alchemy APIs and smart contracts.</Bullet>
             </ul>
           </div>
-        </div>
+        </motion.div>
 
         {/* SELISE */}
-        <div className="flex gap-4 md:gap-8 group">
+        <motion.div variants={item} className="flex gap-4 md:gap-8 group">
           <div className="flex flex-col items-center">
             <div className="w-12 h-12 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-500 dark:text-slate-400 flex items-center justify-center shrink-0 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300 z-10">
               <Users className="w-6 h-6" />
@@ -136,8 +151,8 @@ export default function Experience() {
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </motion.section>
+        </motion.div>
+      </motion.div>
+    </section>
   )
 }
