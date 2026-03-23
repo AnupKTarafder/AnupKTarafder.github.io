@@ -81,7 +81,7 @@ function Bullet({ children }: { children: React.ReactNode }) {
 
 function Tag({ children }: { children: React.ReactNode }) {
   return (
-    <span className="dark:border-primary-900/50 dark:bg-primary-950/50 cursor-default rounded-lg border border-primary-100 bg-primary-50 px-3 py-1.5 text-sm font-semibold text-primary-700 transition-colors hover:bg-primary-600 hover:text-white dark:text-primary-300">
+    <span className="dark:hover:bg-primary-500/30 cursor-default rounded-lg border border-primary-200 bg-primary-50 px-3 py-1.5 text-sm font-semibold text-primary-700 transition-colors hover:bg-primary-600 hover:text-white dark:border-primary-600 dark:bg-primary-600 dark:text-primary-300 dark:text-primary-50">
       {children}
     </span>
   )
@@ -233,7 +233,7 @@ export default function ResumePage({ data }: Props) {
             </span>
             Professional Summary
           </h2>
-          <div className="card dark:border-primary-900/20 border-primary-100 bg-gradient-to-br from-primary-50 to-white dark:from-slate-800 dark:to-slate-900">
+          <div className="card dark:border-primary-500/20 border-primary-200 bg-gradient-to-br from-primary-50 to-white dark:from-slate-800 dark:to-slate-900">
             <p className="text-lg leading-relaxed text-slate-700 dark:text-slate-300 lg:text-xl">
               {summary}
             </p>
@@ -258,7 +258,7 @@ export default function ResumePage({ data }: Props) {
             {data.targetRoles.map((role) => (
               <span
                 key={role}
-                className="dark:border-primary-900/50 dark:bg-primary-950/50 rounded-full border border-primary-100 bg-primary-50 px-4 py-2 text-sm font-semibold text-primary-700 dark:text-primary-300"
+                className="rounded-full border border-primary-200 bg-primary-50 px-4 py-2 text-sm font-semibold text-primary-700 dark:border-primary-600 dark:bg-primary-600 dark:text-primary-50"
               >
                 {role}
               </span>
@@ -298,7 +298,7 @@ export default function ResumePage({ data }: Props) {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded bg-primary-50 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-primary-600 dark:bg-primary-950 dark:text-primary-400"
+                        className="rounded bg-primary-50 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-primary-600 dark:border-primary-600 dark:bg-primary-600 dark:text-primary-50"
                       >
                         {tag}
                       </span>
@@ -364,7 +364,7 @@ export default function ResumePage({ data }: Props) {
                     <time
                       className={`w-fit rounded-full px-4 py-1.5 text-sm font-bold ${
                         exp.isCurrent
-                          ? 'border border-primary-100 bg-primary-50 text-primary-600 dark:border-primary-900 dark:bg-primary-950 dark:text-primary-400'
+                          ? 'dark:border-primary-500/30 dark:bg-primary-500/10 border border-primary-200 bg-primary-50 text-primary-600 dark:text-primary-400'
                           : 'bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400'
                       }`}
                     >
