@@ -21,8 +21,8 @@ export default function VersionSwitcher() {
               onClick={() => navigate(version.route)}
               className={`rounded-full border px-4 py-2 text-sm font-semibold transition-all duration-200 ${
                 isActive
-                  ? 'border-indigo-600 bg-indigo-600 text-white shadow-lg shadow-indigo-200 dark:shadow-none'
-                  : 'border-slate-200 bg-white text-slate-600 hover:border-indigo-300 hover:text-indigo-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-400 dark:hover:border-indigo-700 dark:hover:text-indigo-400'
+                  ? 'border-primary-600 bg-primary-600 text-white shadow-lg shadow-primary-200 dark:shadow-none'
+                  : 'border-slate-200 bg-white text-slate-600 hover:border-primary-300 hover:text-primary-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-400 dark:hover:border-primary-700 dark:hover:text-primary-400'
               }`}
             >
               {version.shortLabel}

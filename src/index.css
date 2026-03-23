@@ -2,9 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ──────────────────────────────────────
+   Color Theme: CSS Custom Properties
+   ────────────────────────────────────── */
+
+/* Default: Indigo */
+:root,
+.theme-indigo {
+  --primary-50: #eef2ff;
+  --primary-100: #e0e7ff;
+  --primary-200: #c7d2fe;
+  --primary-300: #a5b4fc;
+  --primary-400: #818cf8;
+  --primary-500: #6366f1;
+  --primary-600: #4f46e5;
+  --primary-700: #4338ca;
+  --primary-800: #3730a3;
+  --primary-900: #312e81;
+  --primary-950: #1e1b4b;
+  --secondary-400: #a78bfa;
+  --secondary-600: #7c3aed;
+}
+
+.theme-emerald {
+  --primary-50: #ecfdf5;
+  --primary-100: #d1fae5;
+  --primary-200: #a7f3d0;
+  --primary-300: #6ee7b7;
+  --primary-400: #34d399;
+  --primary-500: #10b981;
+  --primary-600: #059669;
+  --primary-700: #047857;
+  --primary-800: #065f46;
+  --primary-900: #064e3b;
+  --primary-950: #022c22;
+  --secondary-400: #2dd4bf;
+  --secondary-600: #0d9488;
+}
+
+.theme-rose {
+  --primary-50: #fff1f2;
+  --primary-100: #ffe4e6;
+  --primary-200: #fecdd3;
+  --primary-300: #fda4af;
+  --primary-400: #fb7185;
+  --primary-500: #f43f5e;
+  --primary-600: #e11d48;
+  --primary-700: #be123c;
+  --primary-800: #9f1239;
+  --primary-900: #881337;
+  --primary-950: #4c0519;
+  --secondary-400: #f472b6;
+  --secondary-600: #db2777;
+}
+
 @layer base {
   body {
-    @apply bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 antialiased selection:bg-indigo-100 dark:selection:bg-indigo-900 transition-colors duration-300;
+    @apply selection:bg-primary-100 dark:selection:bg-primary-900 bg-slate-50 text-slate-800 antialiased transition-colors duration-300 dark:bg-slate-950 dark:text-slate-200;
   }
 
   /* Custom Scrollbar */
@@ -15,16 +69,29 @@
     @apply bg-transparent;
   }
   ::-webkit-scrollbar-thumb {
-    @apply bg-slate-300 dark:bg-slate-700 rounded-full hover:bg-slate-400 dark:hover:bg-slate-600 transition-colors;
+    @apply rounded-full bg-slate-300 transition-colors hover:bg-slate-400 dark:bg-slate-700 dark:hover:bg-slate-600;
   }
 }
 
 @layer components {
   .card {
-    @apply bg-white dark:bg-slate-800/50 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 backdrop-blur-sm;
+    @apply rounded-2xl border border-slate-100 bg-white p-6 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-800/50;
   }
-  
+
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-violet-600 dark:from-indigo-400 dark:to-violet-400;
+    background-image: linear-gradient(
+      to right,
+      var(--primary-600),
+      var(--secondary-600)
+    );
+    @apply bg-clip-text text-transparent;
+  }
+
+  .dark .gradient-text {
+    background-image: linear-gradient(
+      to right,
+      var(--primary-400),
+      var(--secondary-400)
+    );
   }
 }

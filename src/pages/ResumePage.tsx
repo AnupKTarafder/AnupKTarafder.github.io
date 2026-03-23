@@ -29,39 +29,40 @@ import {
 import type { ResumeVersion } from '../data/resumeVersions'
 import { sharedEducation } from '../data/resumeVersions'
 import ThemeToggle from '../components/ThemeToggle'
+import ColorThemeSwitcher from '../components/ColorThemeSwitcher'
 import VersionSwitcher from '../components/VersionSwitcher'
 
 // Icon map for dynamic skill icons
 const iconMap: Record<string, React.ReactNode> = {
   Monitor: (
-    <Monitor className="h-5 w-5 text-indigo-500 transition-transform group-hover:rotate-12" />
+    <Monitor className="h-5 w-5 text-primary-500 transition-transform group-hover:rotate-12" />
   ),
   Server: (
-    <Server className="h-5 w-5 text-indigo-500 transition-transform group-hover:rotate-12" />
+    <Server className="h-5 w-5 text-primary-500 transition-transform group-hover:rotate-12" />
   ),
   Database: (
-    <Database className="h-5 w-5 text-indigo-500 transition-transform group-hover:rotate-12" />
+    <Database className="h-5 w-5 text-primary-500 transition-transform group-hover:rotate-12" />
   ),
   Terminal: (
-    <Terminal className="h-5 w-5 text-indigo-500 transition-transform group-hover:rotate-12" />
+    <Terminal className="h-5 w-5 text-primary-500 transition-transform group-hover:rotate-12" />
   ),
   Users: (
-    <Users className="h-5 w-5 text-indigo-500 transition-transform group-hover:rotate-12" />
+    <Users className="h-5 w-5 text-primary-500 transition-transform group-hover:rotate-12" />
   ),
   Cloud: (
-    <Cloud className="h-5 w-5 text-indigo-500 transition-transform group-hover:rotate-12" />
+    <Cloud className="h-5 w-5 text-primary-500 transition-transform group-hover:rotate-12" />
   ),
   Activity: (
-    <Activity className="h-5 w-5 text-indigo-500 transition-transform group-hover:rotate-12" />
+    <Activity className="h-5 w-5 text-primary-500 transition-transform group-hover:rotate-12" />
   ),
   Workflow: (
-    <Workflow className="h-5 w-5 text-indigo-500 transition-transform group-hover:rotate-12" />
+    <Workflow className="h-5 w-5 text-primary-500 transition-transform group-hover:rotate-12" />
   ),
   Container: (
-    <Container className="h-5 w-5 text-indigo-500 transition-transform group-hover:rotate-12" />
+    <Container className="h-5 w-5 text-primary-500 transition-transform group-hover:rotate-12" />
   ),
   Shield: (
-    <Shield className="h-5 w-5 text-indigo-500 transition-transform group-hover:rotate-12" />
+    <Shield className="h-5 w-5 text-primary-500 transition-transform group-hover:rotate-12" />
   ),
 }
 
@@ -70,7 +71,7 @@ const yearsOfExperience = new Date().getFullYear() - 2019
 function Bullet({ children }: { children: React.ReactNode }) {
   return (
     <li className="flex gap-3">
-      <span className="mt-1 font-bold text-indigo-500 dark:text-indigo-400">
+      <span className="mt-1 font-bold text-primary-500 dark:text-primary-400">
         <ChevronRight className="h-4 w-4" />
       </span>
       <span className="text-slate-600 dark:text-slate-400">{children}</span>
@@ -80,7 +81,7 @@ function Bullet({ children }: { children: React.ReactNode }) {
 
 function Tag({ children }: { children: React.ReactNode }) {
   return (
-    <span className="cursor-default rounded-lg border border-indigo-100 bg-indigo-50 px-3 py-1.5 text-sm font-semibold text-indigo-700 transition-colors hover:bg-indigo-600 hover:text-white dark:border-indigo-900/50 dark:bg-indigo-950/50 dark:text-indigo-300">
+    <span className="dark:border-primary-900/50 dark:bg-primary-950/50 cursor-default rounded-lg border border-primary-100 bg-primary-50 px-3 py-1.5 text-sm font-semibold text-primary-700 transition-colors hover:bg-primary-600 hover:text-white dark:text-primary-300">
       {children}
     </span>
   )
@@ -88,7 +89,7 @@ function Tag({ children }: { children: React.ReactNode }) {
 
 function Pill({ children }: { children: React.ReactNode }) {
   return (
-    <span className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-medium text-slate-700 transition-colors hover:border-indigo-300 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:border-indigo-700">
+    <span className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-medium text-slate-700 transition-colors hover:border-primary-300 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:border-primary-700">
       {children}
     </span>
   )
@@ -138,17 +139,18 @@ export default function ResumePage({ data }: Props) {
     <div className="relative min-h-screen overflow-x-hidden">
       {/* Animated Background Elements */}
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute left-[-10%] top-[-10%] h-[40%] w-[40%] animate-pulse rounded-full bg-indigo-500/10 blur-[120px]"></div>
-        <div className="absolute bottom-[-10%] right-[-10%] h-[40%] w-[40%] animate-pulse rounded-full bg-violet-500/10 blur-[120px] delay-700"></div>
+        <div className="bg-primary-500/10 absolute left-[-10%] top-[-10%] h-[40%] w-[40%] animate-pulse rounded-full blur-[120px]"></div>
+        <div className="bg-secondary-600/10 absolute bottom-[-10%] right-[-10%] h-[40%] w-[40%] animate-pulse rounded-full blur-[120px] delay-700"></div>
       </div>
 
       {/* Progress Bar */}
       <motion.div
-        className="fixed left-0 right-0 top-0 z-50 h-1 origin-left bg-gradient-to-r from-indigo-600 to-violet-600"
+        className="fixed left-0 right-0 top-0 z-50 h-1 origin-left bg-gradient-to-r from-primary-600 to-secondary-600"
         style={{ scaleX }}
       />
 
       <ThemeToggle />
+      <ColorThemeSwitcher />
 
       <div className="mx-auto max-w-5xl px-4 py-12 lg:py-20">
         {/* Version Switcher */}
@@ -165,25 +167,25 @@ export default function ResumePage({ data }: Props) {
             <h1 className="mb-4 text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white lg:text-7xl">
               Anup K. <span className="gradient-text">Tarafder</span>
             </h1>
-            <p className="text-xl font-semibold tracking-tight text-indigo-600 dark:text-indigo-400 lg:text-3xl">
+            <p className="text-xl font-semibold tracking-tight text-primary-600 dark:text-primary-400 lg:text-3xl">
               {data.title}
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4 text-slate-600 dark:text-slate-400 lg:justify-start">
               <div className="flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 shadow-sm dark:border-slate-700 dark:bg-slate-800">
-                <MapPin className="h-4 w-4 text-indigo-500" />
+                <MapPin className="h-4 w-4 text-primary-500" />
                 <span className="text-sm font-medium">
                   Kuala Lumpur, Malaysia
                 </span>
               </div>
               <div className="flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 shadow-sm dark:border-slate-700 dark:bg-slate-800">
-                <Phone className="h-4 w-4 text-indigo-500" />
+                <Phone className="h-4 w-4 text-primary-500" />
                 <span className="text-sm font-medium">+60103637635</span>
               </div>
               <a
                 href="mailto:anup.k.tarafder@gmail.com"
-                className="group flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 shadow-sm transition-all hover:border-indigo-200 hover:text-indigo-600 dark:border-slate-700 dark:bg-slate-800 dark:hover:border-indigo-800 dark:hover:text-indigo-400"
+                className="group flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 shadow-sm transition-all hover:border-primary-200 hover:text-primary-600 dark:border-slate-700 dark:bg-slate-800 dark:hover:border-primary-800 dark:hover:text-primary-400"
               >
-                <Mail className="h-4 w-4 text-indigo-500 transition-transform group-hover:scale-110" />
+                <Mail className="h-4 w-4 text-primary-500 transition-transform group-hover:scale-110" />
                 <span className="text-sm font-medium">
                   anup.k.tarafder@gmail.com
                 </span>
@@ -192,16 +194,16 @@ export default function ResumePage({ data }: Props) {
                 href="https://www.linkedin.com/in/anupktarafder/"
                 target="_blank"
                 rel="noreferrer"
-                className="group flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 shadow-sm transition-all hover:border-indigo-200 hover:text-indigo-600 dark:border-slate-700 dark:bg-slate-800 dark:hover:border-indigo-800 dark:hover:text-indigo-400"
+                className="group flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 shadow-sm transition-all hover:border-primary-200 hover:text-primary-600 dark:border-slate-700 dark:bg-slate-800 dark:hover:border-primary-800 dark:hover:text-primary-400"
               >
-                <Linkedin className="h-4 w-4 text-indigo-500 transition-transform group-hover:scale-110" />
+                <Linkedin className="h-4 w-4 text-primary-500 transition-transform group-hover:scale-110" />
                 <span className="text-sm font-medium">LinkedIn</span>
               </a>
             </div>
           </div>
           <div className="group relative">
-            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-indigo-600 to-violet-600 opacity-25 blur transition duration-1000 group-hover:opacity-50 group-hover:duration-200"></div>
-            <div className="relative h-40 w-40 overflow-hidden rounded-2xl border-2 border-white bg-white shadow-2xl shadow-indigo-200 transition-transform duration-500 group-hover:rotate-0 dark:border-slate-700 dark:bg-slate-800 dark:shadow-none lg:rotate-3">
+            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-primary-600 to-secondary-600 opacity-25 blur transition duration-1000 group-hover:opacity-50 group-hover:duration-200"></div>
+            <div className="relative h-40 w-40 overflow-hidden rounded-2xl border-2 border-white bg-white shadow-2xl shadow-primary-200 transition-transform duration-500 group-hover:rotate-0 dark:border-slate-700 dark:bg-slate-800 dark:shadow-none lg:rotate-3">
               <img
                 src="/images/profile.jpg"
                 alt="Anup K. Tarafder"
@@ -210,7 +212,7 @@ export default function ResumePage({ data }: Props) {
                   const target = e.target as HTMLImageElement
                   target.style.display = 'none'
                   target.parentElement!.innerHTML =
-                    '<div class="w-full h-full bg-indigo-600 text-white flex items-center justify-center text-4xl font-bold">AT</div>'
+                    '<div class="w-full h-full bg-primary-600 text-white flex items-center justify-center text-4xl font-bold">AT</div>'
                 }}
               />
             </div>
@@ -226,12 +228,12 @@ export default function ResumePage({ data }: Props) {
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
           <h2 className="mb-8 flex items-center gap-3 text-2xl font-bold text-slate-900 dark:text-white">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-100 dark:bg-indigo-900/50">
-              <User className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+            <span className="dark:bg-primary-900/50 flex h-10 w-10 items-center justify-center rounded-xl bg-primary-100">
+              <User className="h-5 w-5 text-primary-600 dark:text-primary-400" />
             </span>
             Professional Summary
           </h2>
-          <div className="card border-indigo-100 bg-gradient-to-br from-indigo-50 to-white dark:border-indigo-900/20 dark:from-slate-800 dark:to-slate-900">
+          <div className="card dark:border-primary-900/20 border-primary-100 bg-gradient-to-br from-primary-50 to-white dark:from-slate-800 dark:to-slate-900">
             <p className="text-lg leading-relaxed text-slate-700 dark:text-slate-300 lg:text-xl">
               {summary}
             </p>
@@ -247,8 +249,8 @@ export default function ResumePage({ data }: Props) {
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
           <h2 className="mb-8 flex items-center gap-3 text-2xl font-bold text-slate-900 dark:text-white">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-100 dark:bg-indigo-900/50">
-              <Target className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+            <span className="dark:bg-primary-900/50 flex h-10 w-10 items-center justify-center rounded-xl bg-primary-100">
+              <Target className="h-5 w-5 text-primary-600 dark:text-primary-400" />
             </span>
             Target Roles
           </h2>
@@ -256,7 +258,7 @@ export default function ResumePage({ data }: Props) {
             {data.targetRoles.map((role) => (
               <span
                 key={role}
-                className="rounded-full border border-indigo-100 bg-indigo-50 px-4 py-2 text-sm font-semibold text-indigo-700 dark:border-indigo-900/50 dark:bg-indigo-950/50 dark:text-indigo-300"
+                className="dark:border-primary-900/50 dark:bg-primary-950/50 rounded-full border border-primary-100 bg-primary-50 px-4 py-2 text-sm font-semibold text-primary-700 dark:text-primary-300"
               >
                 {role}
               </span>
@@ -267,8 +269,8 @@ export default function ResumePage({ data }: Props) {
         {/* Featured Projects */}
         <section className="mb-20">
           <h2 className="mb-10 flex items-center gap-3 text-2xl font-bold text-slate-900 dark:text-white">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-100 dark:bg-indigo-900/50">
-              <Folder className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+            <span className="dark:bg-primary-900/50 flex h-10 w-10 items-center justify-center rounded-xl bg-primary-100">
+              <Folder className="h-5 w-5 text-primary-600 dark:text-primary-400" />
             </span>
             Featured Projects
           </h2>
@@ -286,7 +288,7 @@ export default function ResumePage({ data }: Props) {
                 className="card group flex h-full flex-col"
               >
                 <div className="flex-1">
-                  <h3 className="mb-3 text-xl font-bold text-slate-900 transition-colors group-hover:text-indigo-600 dark:text-white dark:group-hover:text-indigo-400">
+                  <h3 className="mb-3 text-xl font-bold text-slate-900 transition-colors group-hover:text-primary-600 dark:text-white dark:group-hover:text-primary-400">
                     {project.title}
                   </h3>
                   <p className="mb-6 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
@@ -296,7 +298,7 @@ export default function ResumePage({ data }: Props) {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded bg-indigo-50 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-indigo-600 dark:bg-indigo-950 dark:text-indigo-400"
+                        className="rounded bg-primary-50 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-primary-600 dark:bg-primary-950 dark:text-primary-400"
                       >
                         {tag}
                       </span>
@@ -311,8 +313,8 @@ export default function ResumePage({ data }: Props) {
         {/* Work Experience */}
         <section className="mb-20">
           <h2 className="mb-10 flex items-center gap-3 text-2xl font-bold text-slate-900 dark:text-white">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-100 dark:bg-indigo-900/50">
-              <Briefcase className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+            <span className="dark:bg-primary-900/50 flex h-10 w-10 items-center justify-center rounded-xl bg-primary-100">
+              <Briefcase className="h-5 w-5 text-primary-600 dark:text-primary-400" />
             </span>
             Work Experience
           </h2>
@@ -334,8 +336,8 @@ export default function ResumePage({ data }: Props) {
                   <div
                     className={`z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full shadow-lg ${
                       exp.isCurrent
-                        ? 'bg-indigo-600 text-white shadow-indigo-200 dark:shadow-none'
-                        : 'bg-slate-200 text-slate-500 transition-colors duration-300 group-hover:bg-indigo-600 group-hover:text-white dark:bg-slate-800 dark:text-slate-400'
+                        ? 'bg-primary-600 text-white shadow-primary-200 dark:shadow-none'
+                        : 'bg-slate-200 text-slate-500 transition-colors duration-300 group-hover:bg-primary-600 group-hover:text-white dark:bg-slate-800 dark:text-slate-400'
                     }`}
                   >
                     {exp.isCurrent ? (
@@ -349,20 +351,20 @@ export default function ResumePage({ data }: Props) {
                   )}
                 </div>
                 <div className="card relative -mt-1 flex-1 overflow-hidden">
-                  <div className="absolute right-0 top-0 -mr-16 -mt-16 h-32 w-32 rounded-full bg-indigo-500/5" />
+                  <div className="bg-primary-500/5 absolute right-0 top-0 -mr-16 -mt-16 h-32 w-32 rounded-full" />
                   <div className="mb-6 flex flex-col justify-between gap-3 md:flex-row md:items-center">
                     <div>
                       <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
                         {exp.jobTitle}
                       </h3>
-                      <p className="text-lg font-semibold text-indigo-600 dark:text-indigo-400">
+                      <p className="text-lg font-semibold text-primary-600 dark:text-primary-400">
                         {exp.company}
                       </p>
                     </div>
                     <time
                       className={`w-fit rounded-full px-4 py-1.5 text-sm font-bold ${
                         exp.isCurrent
-                          ? 'border border-indigo-100 bg-indigo-50 text-indigo-600 dark:border-indigo-900 dark:bg-indigo-950 dark:text-indigo-400'
+                          ? 'border border-primary-100 bg-primary-50 text-primary-600 dark:border-primary-900 dark:bg-primary-950 dark:text-primary-400'
                           : 'bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400'
                       }`}
                     >
@@ -383,7 +385,7 @@ export default function ResumePage({ data }: Props) {
                           key={rIdx}
                           className="group/item border-l-4 border-slate-100 pl-4 dark:border-slate-800"
                         >
-                          <h4 className="text-lg font-bold text-slate-800 transition-colors group-hover/item:text-indigo-600 dark:text-slate-200 dark:group-hover/item:text-indigo-400">
+                          <h4 className="text-lg font-bold text-slate-800 transition-colors group-hover/item:text-primary-600 dark:text-slate-200 dark:group-hover/item:text-primary-400">
                             {role.title}
                           </h4>
                           <p className="mt-2 leading-relaxed text-slate-600 dark:text-slate-400">
@@ -402,8 +404,8 @@ export default function ResumePage({ data }: Props) {
         {/* Technical Skills */}
         <section className="mb-20">
           <h2 className="mb-10 flex items-center gap-3 text-2xl font-bold text-slate-900 dark:text-white">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-100 dark:bg-indigo-900/50">
-              <Code className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+            <span className="dark:bg-primary-900/50 flex h-10 w-10 items-center justify-center rounded-xl bg-primary-100">
+              <Code className="h-5 w-5 text-primary-600 dark:text-primary-400" />
             </span>
             Technical Skills
           </h2>
@@ -419,7 +421,7 @@ export default function ResumePage({ data }: Props) {
                 <div className="card group">
                   <h3 className="mb-6 flex items-center gap-3 text-lg font-bold text-slate-900 dark:text-white">
                     {iconMap[skill.icon] || (
-                      <Code className="h-5 w-5 text-indigo-500 transition-transform group-hover:rotate-12" />
+                      <Code className="h-5 w-5 text-primary-500 transition-transform group-hover:rotate-12" />
                     )}
                     {skill.title}
                   </h3>
@@ -444,17 +446,17 @@ export default function ResumePage({ data }: Props) {
             transition={{ duration: 0.6, ease: 'easeOut' }}
           >
             <h2 className="mb-8 flex items-center gap-3 text-2xl font-bold text-slate-900 dark:text-white">
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-100 dark:bg-indigo-900/50">
-                <GraduationCap className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+              <span className="dark:bg-primary-900/50 flex h-10 w-10 items-center justify-center rounded-xl bg-primary-100">
+                <GraduationCap className="h-5 w-5 text-primary-600 dark:text-primary-400" />
               </span>
               Education
             </h2>
             <div className="card relative overflow-hidden">
-              <div className="absolute right-0 top-0 -mr-12 -mt-12 h-24 w-24 rounded-full bg-indigo-500/5" />
+              <div className="bg-primary-500/5 absolute right-0 top-0 -mr-12 -mt-12 h-24 w-24 rounded-full" />
               <h3 className="mb-2 text-xl font-bold leading-tight text-slate-900 dark:text-white">
                 {sharedEducation.degree}
               </h3>
-              <p className="mb-4 font-semibold text-indigo-600 dark:text-indigo-400">
+              <p className="mb-4 font-semibold text-primary-600 dark:text-primary-400">
                 {sharedEducation.institution}
               </p>
               <div className="flex items-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400">
@@ -474,8 +476,8 @@ export default function ResumePage({ data }: Props) {
             transition={{ duration: 0.6, ease: 'easeOut' }}
           >
             <h2 className="mb-8 flex items-center gap-3 text-2xl font-bold text-slate-900 dark:text-white">
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-100 dark:bg-indigo-900/50">
-                <Award className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+              <span className="dark:bg-primary-900/50 flex h-10 w-10 items-center justify-center rounded-xl bg-primary-100">
+                <Award className="h-5 w-5 text-primary-600 dark:text-primary-400" />
               </span>
               Core Competencies
             </h2>
@@ -499,8 +501,8 @@ export default function ResumePage({ data }: Props) {
             transition={{ duration: 0.6, ease: 'easeOut' }}
           >
             <h2 className="mb-8 flex items-center gap-3 text-2xl font-bold text-slate-900 dark:text-white">
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-100 dark:bg-indigo-900/50">
-                <Shield className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+              <span className="dark:bg-primary-900/50 flex h-10 w-10 items-center justify-center rounded-xl bg-primary-100">
+                <Shield className="h-5 w-5 text-primary-600 dark:text-primary-400" />
               </span>
               Certifications
             </h2>
@@ -523,8 +525,8 @@ export default function ResumePage({ data }: Props) {
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
           <h2 className="mb-8 flex items-center gap-3 text-2xl font-bold text-slate-900 dark:text-white">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-100 dark:bg-indigo-900/50">
-              <Globe className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+            <span className="dark:bg-primary-900/50 flex h-10 w-10 items-center justify-center rounded-xl bg-primary-100">
+              <Globe className="h-5 w-5 text-primary-600 dark:text-primary-400" />
             </span>
             Relocation Readiness
           </h2>
